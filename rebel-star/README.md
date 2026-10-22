@@ -1,0 +1,25 @@
+# Prabhas — The Rebel Star | Birthday Celebration Website
+
+Static site: HTML5 + CSS3 + vanilla JS. No build step, no backend, no dependencies.
+
+## Structure
+index.html · 404.html · css/netflix.css · js/app.js
+assets/video/v1–v5.mp4 (your 5 real videos, untouched)
+assets/frames (poster frames + gallery stills taken from the videos) · assets/img (hero, favicon)
+
+## Run locally
+`python3 -m http.server 8000` → open http://localhost:8000  (use a server, not double-click, so video loads correctly)
+Tribute player: plays reels 1→5 in order on one video element, auto-advances with an "Up next" card; Play Tribute / Play all start from Episode 1.
+Section "A Cinematic Journey" (timeline) replaces the old Filmography row; edit the `T` array in js/app.js.
+
+## Deploy (any static host)
+- Netlify: drag the folder onto app.netlify.com/drop
+- Vercel / Cloudflare Pages / GitHub Pages: upload the folder, no build command, output directory = root
+Before launch: replace every `YOUR-DOMAIN` in index.html (canonical + og:image) with your real domain, so social previews work.
+
+## Notes
+- Fan wall is DEMO MODE: wishes live in each visitor's own browser (localStorage). To make them public you need a backend with moderation.
+- Sound is generated in-browser, off by default; it pauses while a video with sound plays.
+- Fonts use a system serif/sans stack. To self-host a display font (e.g. Cinzel), add @font-face in css/style.css.
+- Analytics: a commented Plausible tag sits in index.html (cookie-less); enable only if you want it.
+- Fan-made content: you are responsible for having rights to the videos/stills you publish.
